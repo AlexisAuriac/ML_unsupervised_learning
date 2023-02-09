@@ -32,7 +32,7 @@ Whether it is a clustering, a dimensionality reduction or a density estimation, 
 Short docstrings in the python files will be appreciated, at least at the beginning of each file.
 
 In our report, you could include for instance:
-- general informations on the dataset found in the analysis file.
+- general information on the dataset found in the analysis file.
 - a potential comparison between several algorithm / models that you explored, if relevant
 - a presentation of the method used to tune the algorithms (choice of hyperparameters, cross validation, etc).
 - a short discussion of the results

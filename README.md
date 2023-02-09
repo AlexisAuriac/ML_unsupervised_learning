@@ -7,7 +7,7 @@ PAR-9-2
 Group members:
 - Alexis Auriac
 
-Delivery: Marth 19th
+Delivery: March 19th
 
 ## Subject
 
