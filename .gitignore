@@ -1,0 +1,11 @@
+# virtual env
+/venv/
+/bin/
+/include/
+/lib/
+/lib64
+/share/
+/pyvenv.cfg
+
+# Python cahche
+__pycache__/
