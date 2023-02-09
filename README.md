@@ -35,6 +35,6 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Exercise 1, 2, 3, 4, 5
+Part 1, 2, 3, 4, 5
 
 Write report
