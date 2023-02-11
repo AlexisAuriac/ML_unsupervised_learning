@@ -35,11 +35,6 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 1:
-- make Z law after real data (change means and covariance)
-- clean up code, add docstring(s)
-- write README
-
 Part 2, 3, 4, 5
 
 Write report

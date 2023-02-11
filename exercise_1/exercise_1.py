@@ -1,17 +1,23 @@
 #!/bin/env python3
 
+"""
+1. Creates a multivariate normal distribution
+2. Plots n sample
+3. Compute the empirical average of the first n samples, as a function of the number of samples n and plot the euclidean distance to the expected value as a function of n
+"""
+
 import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
 ## Create the random variable
-joint_dist = stats.multivariate_normal([1, 5], [[1, 0.5], [0.5, 1]])
+joint_dist = stats.multivariate_normal([175, 75], [[20, 10], [10, 10]])
 E_x = joint_dist.mean[0]
 E_y = joint_dist.mean[1]
 expected_value = np.array([E_x, E_y])
 
-print(f'Expected value of x: {E_x}')
-print(f'Expected value of y: {E_y}')
+print(f'Expected value of X: {E_x}')
+print(f'Expected value of Y: {E_y}')
 print(f'Expected value of Z: {expected_value}')
 
 ## Take a sample and plot it
@@ -20,8 +26,8 @@ sample = joint_dist.rvs(size=sample_size)
 
 plt.scatter(sample[:, 0], sample[:, 1])
 plt.title(f'Sample from the law Z (n={sample_size})')
-plt.xlabel('X')
-plt.ylabel('Y')
+plt.xlabel('X (height in cm)')
+plt.ylabel('Y (weight in kg)')
 plt.savefig('images/sample.jpg')
 plt.clf()
 
