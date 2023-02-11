@@ -30,10 +30,10 @@ Its expected value is ```(175, 75)```.
 
 We choose n=1000.
 
-![Sample from the law Z (n=1000)](/images/sample.jpg?raw=true)
+![Sample from the law Z (n=1000)](images/sample.jpg?raw=true)
 
 ### 3. Euclidian distance
 
-![Euclidean distance between the expected and the empirical average](/images/euclidian_distance.jpg?raw=true)
+![Euclidean distance between the expected and the empirical average](images/euclidian_distance.jpg?raw=true)
 
 We can see that the empirical average converges to the expected value.
