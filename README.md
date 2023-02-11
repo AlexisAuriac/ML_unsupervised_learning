@@ -35,6 +35,11 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 2, 3, 4, 5
+Part 2:
+- write README
+- add another dimensionality method
+- cleanup code
+
+Part 3, 4, 5
 
 Write report

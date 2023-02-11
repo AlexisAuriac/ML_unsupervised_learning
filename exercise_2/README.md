@@ -4,7 +4,7 @@
 
 A meteorological station has gathered 800 data samples in dimension 6, thanks to 6 sensors. The operators of the station would like to predict the risk of a tempest the next day, but first, they need to reduce the dimensionality of the data, in order to apply a supervised learning algorithm on the reduced data.
 
-The data are stored in the ```exercise_2``` folder:
+The data is stored in the ```exercise_2``` folder:
 - ```data.npy``` contains the raw data
 - ```labels.npy``` contains the results for each sample: 1 if there is a tempest, 0 otherwise.
 
