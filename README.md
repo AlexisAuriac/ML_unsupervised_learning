@@ -6,6 +6,7 @@ PAR-9-2
 
 Group members:
 - Alexis Auriac
+- David Tedesco
 
 Delivery: March 19th
 
