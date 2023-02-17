@@ -36,6 +36,11 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 3, 4, 5
+Part 3:
+- implement remaining methods/heuristics
+- clean up code
+- write README
+
+Part 4, 5
 
 Write report

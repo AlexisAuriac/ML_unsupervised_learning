@@ -11,3 +11,15 @@ Pick:
 Compare and discuss the difference between the results of the different methods you tried. Discuss whether one mehod (combination of the clustering method and of heuristic) seems to give more interesting or clearer results than the others.
 
 You may use libraries such as scikit-learn in order to implement the methods.
+
+## Main sources
+
+[Best Practices for Visualizing Your Cluster Results](https://towardsdatascience.com/best-practices-for-visualizing-your-cluster-results-20a3baac7426)
+
+https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+
+## Solution
+
+### Kmeans with Knee
+
+![Kmeans with knee](images/kmeans_knee.jpg?raw=true)
