@@ -6,7 +6,9 @@ A company has gathered data about its customers and would like to identify simil
 
 Pick:
 - two clustering methods
-- two heuristics to choose a relevant number of clusters, and perform different clusterings of this dataset (overall, you have 2 × 2 = 4 methods). You must use a different metric for each clustering method. You could for instance use the standard euclidean metric for one method, and a different metric for the other method, for instance based on a rescaling of the dimensions of the data (hence, you could transform the data first, and apply a known metric on the transformed data.)
+- two heuristics to choose a relevant number of clusters, and perform different clusterings of this dataset (overall, you have 2 × 2 = 4 methods).
+
+You must use a different metric for each clustering method. You could for instance use the standard euclidean metric for one method, and a different metric for the other method, for instance based on a rescaling of the dimensions of the data (hence, you could transform the data first, and apply a known metric on the transformed data.)
 
 Compare and discuss the difference between the results of the different methods you tried. Discuss whether one mehod (combination of the clustering method and of heuristic) seems to give more interesting or clearer results than the others.
 

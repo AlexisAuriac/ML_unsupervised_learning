@@ -2,7 +2,7 @@
 
 ## Subject
 
-Pick a dataset and perform an unsupervised learning on it. Ideally, your algorithm should answer an interesting question about the dataset. The unsupervised learning can then be either a clustering, a dimensionality reduction or a regression.
+Pick a dataset and perform an unsupervised learning on it. Your dataset has to be different from any dataset seen during the course. Ideally, your algorithm should answer an interesting question about the dataset. The unsupervised learning can then be either a clustering, a dimensionality reduction or a regression.
 
 You are free to choose the dataset within the following constraints :
 - several hundreds of lines
