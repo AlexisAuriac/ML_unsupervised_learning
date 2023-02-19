@@ -28,9 +28,9 @@ This method is linear.
 
 This method works really well with 3 dimensions.
 
-![PCA (2d)](images/pca_2d.jpg?raw=true "PCA (2d)")
+![PCA (2d)](images/pca_2d.jpg?raw=true)
 
-![PCA (3d)](images/pca_3d.jpg?raw=true "PCA (3d)")
+![PCA (3d)](images/pca_3d.jpg?raw=true)
 
 ### Kernel PCA
 
@@ -40,9 +40,9 @@ This method is non-linear.
 
 This method does not work well at all.
 
-![Kernel PCA (2d)](images/kernel_pca_2d.jpg?raw=true "Kernel PCA (2d)")
+![Kernel PCA (2d)](images/kernel_pca_2d.jpg?raw=true)
 
-![Kernel PCA (3d)](images/kernel_pca_3d.jpg?raw=true "Kernel PCA (3d)")
+![Kernel PCA (3d)](images/kernel_pca_3d.jpg?raw=true)
 
 ### LDA
 
@@ -63,6 +63,6 @@ This method is linear.
 
 It gives very similar results to PCA, with 3d working really well.
 
-![SVD (2d)](images/svd_2d.jpg?raw=true "SVD (2d)")
+![SVD (2d)](images/svd_2d.jpg?raw=true)
 
-![SVD (3d)](images/svd_3d.jpg?raw=true "SVD (3d)")
+![SVD (3d)](images/svd_3d.jpg?raw=true)
