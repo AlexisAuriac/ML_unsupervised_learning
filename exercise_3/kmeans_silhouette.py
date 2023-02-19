@@ -104,7 +104,7 @@ for i, n_clusters in enumerate(range(MIN_K, MAX_K + 1)):
         fontweight='bold',
     )
 
-    plt.savefig(f'images/kmeans_silhouette(k={n_clusters})')
+    plt.savefig(f'images/kmeans_silhouette(k={n_clusters}).jpg')
 
 
 df = pd.DataFrame.from_records(k_silhouette_list, columns=['k', 'silhouette average'])

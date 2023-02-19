@@ -51,12 +51,12 @@ Here is the silhouette average for each, sorted from highest to lowest.
 k | silhouette average
 --- | ---
 6 | 0.887
-5 | 0.792
-7 | 0.765
+5 | 0.793
+7 | 0.768
 4 | 0.660
-8 | 0.659
-2 | 0.556
-3 | 0.549
+8 | 0.645
+2 | 0.583
+3 | 0.556
 
 k=6 clearly has the highest silhouette average which is a good indicator that it is the best clustering.
 
@@ -64,6 +64,6 @@ In other clustering for 7 and 8 we can see negative values, which likely means t
 
 We can see that clustering for has very wide fluctuations in the size of the silhouette plots.
 
-Although 6 clusters seems to be the best, depending on the situation 2, 4, and 5 might be more adapted.
+Although 6 clusters seems to be the best, depending on the situation 2, 3, 4, or 5 might be more adapted.
 
 Compared to the knee method this heuristic requires more effort to code and a better understanding of the method and context to interpret it, but it also allows for more nuance.
