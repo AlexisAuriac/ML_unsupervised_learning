@@ -62,7 +62,7 @@ k=6 clearly has the highest silhouette average which is a good indicator that it
 
 In other clustering for 7 and 8 we can see negative values, which likely means that some points have been assigned to the wrong cluster, as they more similar to data points in other clusters.
 
-We can see that clustering for 7 and also have very wide fluctuations in the size of the silhouette plots. These fluctuations are less pronounced but still very noticeable for 2, 3, 4, and 5.
+We can see that clustering for 7 and 8 also have very wide fluctuations in the size of the silhouette plots. These fluctuations are less pronounced but still very noticeable for 2, 3, 4, and 5.
 
 Although 6 clusters seems to be the best, depending on the situation 2, 3, 4, or 5 might be more adapted.
 
