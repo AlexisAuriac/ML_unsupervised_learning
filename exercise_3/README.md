@@ -80,7 +80,13 @@ too many points to make good dendrogram
 
 #### Knee/Elbow method
 
-Hierarchical clustering doesn't have inertia compared to Kmeans, so we are going to use the sum of distances (ssd) between each point and its assigned cluster centroid instead.
+(see hierarchical_knee.py)
+
+Hierarchical clustering doesn't have inertia compared to Kmeans, so we are going to use the squared sum of distances (ssd) between each point and its assigned cluster centroid instead.
+
+![Hierarchical clustering with knee](images/hierarchical_knee.jpg?raw=true)
+
+We get a knee at k=5.
 
 ### Spectral clustering
 
