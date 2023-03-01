@@ -128,16 +128,18 @@ If we plot a dendrogram we can see that after k=6 the distance between clusters 
 
 ![Hierarchical clustering dendrogram](images/hierarchical_dendrogram.jpg?raw=true)
 
-### Spectral clustering
+### Other methods we briefly tried
 
-Looking at the 5th row of the following examples, it doesn't seem like it would be a good fit for our data.
+### DBSCAN
+
+Looking at the 5th row of the following examples, it seemed like it would be a good fit for our data.
 
 ![comparison of clusering methods](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
 
 ([source](https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html))
 
-### DBSCAN
+[DBSCAN tutorial](https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html)
 
-https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html
+From what we understand, the algorithm chooses the number of clusters for us, without the use of an heuristic.
 
-Having trouble understanding how to optimize the number of clusters. It automatically determins the number of clusters, optimization mostly comes from the optimization of its parameters
+The optimization comes from tuning its ```eps``` and ```min_samples``` hyperparameters, which can be done using methods such as grid search or random search.

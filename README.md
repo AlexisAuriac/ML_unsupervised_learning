@@ -37,7 +37,6 @@ pip3 freeze > requirements.txt
 ## Todo
 
 Part 3:
-- mention other methods we tried in README
 - clean up code
 
 Part 4, 5
