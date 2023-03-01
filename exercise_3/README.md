@@ -18,7 +18,7 @@ You may use libraries such as scikit-learn in order to implement the methods.
 
 [Best Practices for Visualizing Your Cluster Results](https://towardsdatascience.com/best-practices-for-visualizing-your-cluster-results-20a3baac7426)
 
-https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+[How to make a silhouette a kmeans silouhette analysis](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
 
 ## Solution
 
@@ -74,7 +74,7 @@ Compared to the knee method this heuristic requires more effort to code and a be
 
 ### Hierarchical clustering
 
-https://towardsdatascience.com/hierarchical-clustering-explained-e59b13846da8
+[Hierarchical clustering explained](https://towardsdatascience.com/hierarchical-clustering-explained-e59b13846da8)
 
 too many points to make good dendrogram
 
@@ -87,6 +87,38 @@ Hierarchical clustering doesn't have inertia compared to Kmeans, so we are going
 ![Hierarchical clustering with knee](images/hierarchical_knee.jpg?raw=true)
 
 We get a knee at k=5.
+
+#### Silhouette analysis
+
+(see hierarchical_silhouette.py)
+
+Again, we test for k in \[2, 8\].
+
+![Hierarchical clustering with silhouette (k=2)](images/hierarchical_silhouette(k=2).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=3)](images/hierarchical_silhouette(k=3).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=4)](images/hierarchical_silhouette(k=4).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=5)](images/hierarchical_silhouette(k=5).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=6)](images/hierarchical_silhouette(k=6).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=7)](images/hierarchical_silhouette(k=7).jpg?raw=true)
+![Hierarchical clustering with silhouette (k=8)](images/hierarchical_silhouette(k=8).jpg?raw=true)
+
+Here is the silhouette average for each, sorted from highest to lowest.
+
+k | silhouette average
+--- | ---
+6 | 0.887
+7 | 0.800
+5 | 0.793
+8 | 0.706
+4 | 0.684
+3 | 0.583
+2 | 0.556
+
+The results are overall very similar to what we found with Kmeans.
+
+Again, k=6 yields the best silhouette average which is a good indicator that it is the best clustering, k=7 and k=8 have negative values, and we can see wide fluctuations in all clusterings but k=6.
+
+Compared to the knee method this heuristic requires more effort to code and a better understanding of the method and context to interpret it, but it also allows for more nuance.
 
 ### Spectral clustering
 

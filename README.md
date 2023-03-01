@@ -37,9 +37,9 @@ pip3 freeze > requirements.txt
 ## Todo
 
 Part 3:
-- implement remaining methods/heuristics
+- mention other methods we tried in README
+- add a dendrogram
 - clean up code
-- write README
 
 Part 4, 5
 

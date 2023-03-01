@@ -2,26 +2,27 @@
 
 """
 This code is largely inspired from this tutorial: https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
-Computes and plots a silhouette analysis with Kmeans.
+Computes and plots a silhouette analysis with hierarchical clustering.
 """
 
 import numpy as np
 import pandas as pd
-from sklearn.cluster import KMeans
+from scipy.cluster.hierarchy import linkage, fcluster
 from sklearn.metrics import silhouette_samples, silhouette_score
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
 X = np.load('data.npy')
+Z = linkage(X, method='weighted')
 
 MIN_K = 2
 MAX_K = 8
 k_silhouette_list = []
 
 for i, n_clusters in enumerate(range(MIN_K, MAX_K + 1)):
-    ## Compute kmeans clusters and silhouette analysis
-    kmeans = KMeans(n_clusters=n_clusters, n_init="auto")
-    cluster_labels = kmeans.fit_predict(X)
+    ## Compute hierarchical clusters and silhouette analysis
+    cluster_labels = fcluster(Z, n_clusters, criterion='maxclust') - 1
+    centers = np.array([X[cluster_labels == cluster].mean(axis=0) for cluster in range(n_clusters)])
 
     silhouette_avg = silhouette_score(X, cluster_labels)
     print(f'For n_clusters = {n_clusters} the average silhouette score is: {silhouette_avg:.3f}')
@@ -79,7 +80,6 @@ for i, n_clusters in enumerate(range(MIN_K, MAX_K + 1)):
         X[:, 0], X[:, 1], marker=".", s=30, lw=0, alpha=0.7, c=colors, edgecolor="k"
     )
 
-    centers = kmeans.cluster_centers_
     # Draw white circles at cluster centers
     ax2.scatter(
         centers[:, 0],
@@ -99,12 +99,12 @@ for i, n_clusters in enumerate(range(MIN_K, MAX_K + 1)):
     ax2.set_ylabel('2nd feature')
 
     plt.suptitle(
-        f'Silhouette analysis for KMeans clustering with n_clusters = {n_clusters}',
+        f'Silhouette analysis for Hierarchical clustering with n_clusters = {n_clusters}',
         fontsize=14,
         fontweight='bold',
     )
 
-    plt.savefig(f'images/kmeans_silhouette(k={n_clusters}).jpg')
+    plt.savefig(f'images/hierarchical_silhouette(k={n_clusters}).jpg')
 
 
 df = pd.DataFrame.from_records(k_silhouette_list, columns=['k', 'silhouette average'])
