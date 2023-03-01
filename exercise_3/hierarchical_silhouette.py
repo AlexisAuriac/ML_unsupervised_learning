@@ -5,6 +5,8 @@ This code is largely inspired from this tutorial: https://scikit-learn.org/stabl
 Computes and plots a silhouette analysis with hierarchical clustering.
 """
 
+import os
+
 import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import linkage, fcluster
@@ -104,7 +106,7 @@ for i, n_clusters in enumerate(range(MIN_K, MAX_K + 1)):
         fontweight='bold',
     )
 
-    plt.savefig(f'images/hierarchical_silhouette(k={n_clusters}).jpg')
+    plt.savefig(os.path.join('images', f'hierarchical_silhouette(k={n_clusters}).jpg'))
 
 
 df = pd.DataFrame.from_records(k_silhouette_list, columns=['k', 'silhouette average'])

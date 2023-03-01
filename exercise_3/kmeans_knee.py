@@ -5,6 +5,8 @@ Computes Kmeans clustering for various numbers of clusters.
 Computes the best clustering using the knee method and plots the result.
 """
 
+import os
+
 import numpy as np
 from sklearn.cluster import KMeans
 from kneed import KneeLocator
@@ -74,4 +76,4 @@ fig.set_size_inches(18, 7)
 plot_knee(ax1, inertias, kneedle.knee)
 plot_clusters(ax2, data, kmeans.cluster_centers_, kmeans.labels_)
 plt.suptitle('Kmeans clustering using knee method heuristic')
-plt.savefig('images/kmeans_knee.jpg')
+plt.savefig(os.path.join('images', 'kmeans_knee.jpg'))

@@ -36,8 +36,6 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-part 1, 2, 3: use ```os.path.join``` when saving data/images
-
 Part 4, 5
 
 Write report

@@ -5,6 +5,8 @@ Computes Hierarchical clustering for various numbers of clusters.
 Computes the best clustering using the knee method and plots the result.
 """
 
+import os
+
 import numpy as np
 from scipy.cluster.hierarchy import linkage, fcluster
 from kneed import KneeLocator
@@ -82,4 +84,4 @@ fig.set_size_inches(18, 7)
 plot_knee(ax1, ssd_values, kneedle.knee)
 plot_clusters(ax2, X, clustering['centers'], clustering['labels'])
 plt.suptitle('Hierarchical clustering using knee method heuristic')
-plt.savefig('images/hierarchical_knee.jpg')
+plt.savefig(os.path.join('images', 'hierarchical_knee.jpg'))

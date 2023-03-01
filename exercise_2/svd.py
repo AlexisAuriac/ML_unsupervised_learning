@@ -4,6 +4,8 @@
 Dimensionality reduction with truncate SVD
 """
 
+import os
+
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import TruncatedSVD
@@ -25,7 +27,7 @@ plt.title('2d SVD Dimensionality Reduction')
 plt.scatter(X2[no_storm, 0], X2[no_storm, 1], color='blue', label='no storm')
 plt.scatter(X2[storm, 0], X2[storm, 1], color='red', label='storm')
 plt.legend()
-plt.savefig('images/svd_2d.jpg')
+plt.savefig(os.path.join('images', 'svd_2d.jpg'))
 
 svd = TruncatedSVD(n_components=3, algorithm='randomized')
 X3 = svd.fit_transform(X_scaled)
@@ -36,4 +38,4 @@ ax.scatter(X3[no_storm, 0], X3[no_storm, 1], X3[no_storm, 2], color='blue', labe
 ax.scatter(X3[storm, 0], X3[storm, 1], X3[storm, 2], color='red', label='storm')
 ax.view_init(elev=10, azim=-91, roll=0)
 plt.legend()
-plt.savefig('images/svd_3d.jpg')
+plt.savefig(os.path.join('images', 'svd_3d.jpg'))

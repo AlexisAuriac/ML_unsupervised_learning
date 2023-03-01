@@ -6,6 +6,8 @@
 3. Compute the empirical average of the first n samples, as a function of the number of samples n and plot the euclidean distance to the expected value as a function of n
 """
 
+import os
+
 import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
@@ -43,4 +45,4 @@ plt.plot(n_values, euclidean_distances)
 plt.title('Euclidean distance between E and the empirical average')
 plt.xlabel('n')
 plt.ylabel('Euclidian distance')
-plt.savefig('images/euclidian_distance.jpg')
+plt.savefig(os.path.join('images', 'euclidian_distance.jpg'))

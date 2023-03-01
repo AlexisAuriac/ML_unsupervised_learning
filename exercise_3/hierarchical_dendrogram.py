@@ -4,6 +4,8 @@
 Computes the linkage matrix of the dataset and plots a dendrogram.
 """
 
+import os
+
 import numpy as np
 from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
@@ -19,4 +21,4 @@ plt.ylabel('Distance')
 plt.title('Dendrogram of the hierarchical clustering')
 plt.axhline(y=500, color='r', linestyle='--', label='k=6')
 plt.legend()
-plt.savefig('images/hierarchical_dendrogram.jpg')
+plt.savefig(os.path.join('images', 'hierarchical_dendrogram.jpg'))
