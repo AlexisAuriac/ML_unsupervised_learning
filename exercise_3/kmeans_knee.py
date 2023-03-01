@@ -12,9 +12,9 @@ MIN_K = 2
 MAX_K = 15
 
 def plot_clusters(ax, X, centers, labels):
-    colors = cm.nipy_spectral(labels.astype(float) / kneedle.knee)
+    colors = cm.nipy_spectral(labels.astype(float) / len(centers))
     ax.scatter(
-        data[:, 0], data[:, 1], marker='.', s=30, lw=0, alpha=0.7, c=colors, edgecolor='k'
+        X[:, 0], X[:, 1], marker='.', s=30, lw=0, alpha=0.7, c=colors, edgecolor='k'
     )
 
     ax.scatter(
@@ -29,21 +29,21 @@ def plot_clusters(ax, X, centers, labels):
     for i, c in enumerate(centers):
         ax.scatter(c[0], c[1], marker='$%d$' % i, alpha=1, s=50, edgecolor='k')
 
-    ax2.set_title('Clustered data (only first 2 features)')
-    ax2.set_xlabel('1st feature')
-    ax2.set_ylabel('2nd feature')
+    ax.set_title('Clustered data (only first 2 features)')
+    ax.set_xlabel('1st feature')
+    ax.set_ylabel('2nd feature')
 
 
 def plot_knee(ax, inertias, knee): 
-    ax1.plot(range(MIN_K, MAX_K), inertias)
-    ax1.set_xticks(range(MIN_K, MAX_K))
+    ax.plot(range(MIN_K, MAX_K), inertias)
+    ax.set_xticks(range(MIN_K, MAX_K))
 
-    ax1.axvline(kneedle.knee, 0, 1, linestyle='--', color='r', label='knee')
+    ax.axvline(knee, 0, 1, linestyle='--', color='r', label='knee')
 
-    ax1.set_title('Knee')
-    ax1.set_xlabel('Number of centroids')
-    ax1.set_ylabel('Inertia')
-    ax1.legend()
+    ax.set_title('Knee')
+    ax.set_xlabel('Number of centroids')
+    ax.set_ylabel('Inertia')
+    ax.legend()
 
 
 kmeans_list = [KMeans(n_clusters=k, n_init='auto').fit(data) for k in range(MIN_K, MAX_K)]
@@ -61,4 +61,5 @@ fig, (ax1, ax2) = plt.subplots(1, 2)
 fig.set_size_inches(18, 7)
 plot_knee(ax1, inertias, kneedle.knee)
 plot_clusters(ax2, data, kmeans.cluster_centers_, kmeans.labels_)
+plt.suptitle('Kmeans clustering using knee method heuristic')
 plt.savefig('images/kmeans_knee.jpg')
