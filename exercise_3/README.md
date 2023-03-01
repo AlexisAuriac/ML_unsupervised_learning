@@ -22,7 +22,9 @@ https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_ana
 
 ## Solution
 
-### Kmeans with Knee
+### Kmeans
+
+#### Knee/Elbow method
 
 (see kmeans_knee.py)
 
@@ -34,7 +36,7 @@ The exact knee varies with each run since kmeans initialization is random but us
 
 It also sometimes gives k=5, in this case it merges clusters 3 and 5. On rare occasions it gives k=3 which is very odd.
 
-### Kmeans with silhouette analysis
+#### Silhouette analysis
 
 (see kmeans_silhouhette.py)
 
@@ -69,3 +71,27 @@ We can see that clustering for 7 and 8 also have very wide fluctuations in the s
 Although 6 clusters seems to be the best, depending on the situation 2, 3, 4, or 5 might be more adapted.
 
 Compared to the knee method this heuristic requires more effort to code and a better understanding of the method and context to interpret it, but it also allows for more nuance.
+
+### Hierarchical clustering
+
+https://towardsdatascience.com/hierarchical-clustering-explained-e59b13846da8
+
+too many points to make good dendrogram
+
+#### Knee/Elbow method
+
+Hierarchical clustering doesn't have inertia compared to Kmeans, so we are going to use the sum of distances (ssd) between each point and its assigned cluster centroid instead.
+
+### Spectral clustering
+
+Looking at the 5th row of the following examples, it doesn't seem like it would be a good fit for our data.
+
+![comparison of clusering methods](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
+
+([source](https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html))
+
+### DBSCAN
+
+https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html
+
+Having trouble understanding how to optimize the number of clusters. It automatically determins the number of clusters, optimization mostly comes from the optimization of its parameters
