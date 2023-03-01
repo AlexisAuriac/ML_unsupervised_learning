@@ -1,10 +1,12 @@
 #!/bin/env python3
 
+"""
+Computes the linkage matrix of the dataset and plots a dendrogram.
+"""
+
 import numpy as np
-from scipy.cluster.hierarchy import linkage, fcluster, dendrogram
-from kneed import KneeLocator
+from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 
 X = np.load('data.npy')
 Z = linkage(X, method='weighted')

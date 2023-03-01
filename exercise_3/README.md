@@ -134,7 +134,7 @@ If we plot a dendrogram we can see that after k=6 the distance between clusters 
 
 Looking at the 5th row of the following examples, it seemed like it would be a good fit for our data.
 
-![comparison of clusering methods](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
+![comparison of clustering methods](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
 
 ([source](https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html))
 

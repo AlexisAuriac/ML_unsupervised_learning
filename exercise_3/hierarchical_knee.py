@@ -1,5 +1,10 @@
 #!/bin/env python3
 
+"""
+Computes Hierarchical clustering for various numbers of clusters.
+Computes the best clustering using the knee method and plots the result.
+"""
+
 import numpy as np
 from scipy.cluster.hierarchy import linkage, fcluster
 from kneed import KneeLocator
@@ -14,6 +19,9 @@ clusterings = []
 
 
 def plot_knee(ax, ssds, knee): 
+    """
+    Plots the inertia for each value of k and the knee of the curve
+    """
     ax.plot(k_range, ssds)
     ax.set_xticks(k_range)
 
@@ -26,6 +34,9 @@ def plot_knee(ax, ssds, knee):
 
 
 def plot_clusters(ax, X, centers, labels):
+    """
+    Plots the clusters using only the first 2 features of the dataset.
+    """
     colors = cm.nipy_spectral(labels.astype(float) / len(centers))
     ax.scatter( 
         X[:, 0], X[:, 1], marker='.', s=30, lw=0, alpha=0.7, c=colors, edgecolor='k'

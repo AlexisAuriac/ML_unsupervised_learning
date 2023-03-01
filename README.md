@@ -36,8 +36,7 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 3:
-- clean up code
+part 1, 2, 3: use ```os.path.join``` when saving data/images
 
 Part 4, 5
 
