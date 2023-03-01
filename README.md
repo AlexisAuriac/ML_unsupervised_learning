@@ -38,7 +38,6 @@ pip3 freeze > requirements.txt
 
 Part 3:
 - mention other methods we tried in README
-- add a dendrogram
 - clean up code
 
 Part 4, 5

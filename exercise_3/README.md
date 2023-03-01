@@ -120,6 +120,14 @@ Again, k=6 yields the best silhouette average which is a good indicator that it 
 
 Compared to the knee method this heuristic requires more effort to code and a better understanding of the method and context to interpret it, but it also allows for more nuance.
 
+#### Dendrogram
+
+(see hierarchical_dendrogram.py)
+
+If we plot a dendrogram we can see that after k=6 the distance between clusters becomes significantly smaller.
+
+![Hierarchical clustering dendrogram](images/hierarchical_dendrogram.jpg?raw=true)
+
 ### Spectral clustering
 
 Looking at the 5th row of the following examples, it doesn't seem like it would be a good fit for our data.
