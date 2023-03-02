@@ -6,6 +6,7 @@ Computes the best clustering using the knee method and plots the result.
 """
 
 import os
+from typing import List
 
 import numpy as np
 from scipy.cluster.hierarchy import linkage, fcluster
@@ -19,8 +20,7 @@ Z = linkage(X, method='weighted')
 k_range = range(3, 9)
 clusterings = []
 
-
-def plot_knee(ax, ssds, knee): 
+def plot_knee(ax: plt.Axes, ssds: List[float], knee: int):
     """
     Plots the inertia for each value of k and the knee of the curve
     """
@@ -35,7 +35,7 @@ def plot_knee(ax, ssds, knee):
     ax.legend()
 
 
-def plot_clusters(ax, X, centers, labels):
+def plot_clusters(ax: plt.Axes, X: np.ndarray, centers: np.ndarray, labels: List[int]):
     """
     Plots the clusters using only the first 2 features of the dataset.
     """

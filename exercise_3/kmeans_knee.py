@@ -6,6 +6,7 @@ Computes the best clustering using the knee method and plots the result.
 """
 
 import os
+from typing import List
 
 import numpy as np
 from sklearn.cluster import KMeans
@@ -19,7 +20,7 @@ MIN_K = 2
 MAX_K = 15
 
 
-def plot_knee(ax, inertias, knee): 
+def plot_knee(ax: plt.Axes, inertias: List[float], knee: int):
     """
     Plots the inertia for each value of k and the knee of the curve
     """
@@ -34,7 +35,7 @@ def plot_knee(ax, inertias, knee):
     ax.legend()
 
 
-def plot_clusters(ax, X, centers, labels):
+def plot_clusters(ax: plt.Axes, X: np.ndarray, centers: np.ndarray, labels: List[int]):
     """
     Plots the clusters using only the first 2 features of the dataset.
     """
