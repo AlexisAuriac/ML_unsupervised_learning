@@ -1,10 +1,14 @@
+#!/bin/env python3
+
 import os
 
 import matplotlib.pyplot as plt
 import numpy as np
 
 from agent import Agent
-from default_policy import default_policy
+# from default_policy import default_policy
+from policy_no_ml import policy as policy_no_ml
+from policy import policy
 
 WORLD_SIZE = 8
 WORLD_UPDATE_PERIOD = 10
@@ -37,7 +41,6 @@ def run_simulation() -> list:
     averaged_rewards = list()
 
     for step in range(TOTAL_NUMBER_OF_STEPS):
-
         # update world periodically
         # when the world is updated, the agent knows nothing
         # about the rewards anymore
@@ -48,7 +51,7 @@ def run_simulation() -> list:
             # print(f"rewards: {rewards}\n")
 
         # choose action and move agent
-        action = default_policy(agent)
+        action = policy(agent)
         agent.move(action, WORLD_SIZE)
         # print(f"move {action}")
         # print(f"position: {agent.position}")
@@ -70,18 +73,19 @@ def main():
     averaged_rewards = run_simulation()
     final_averaged_reward = averaged_rewards[-1]
     print(f"final reward: {final_averaged_reward:.3f}")
-    plt.plot(range(TOTAL_NUMBER_OF_STEPS), averaged_rewards, "o", markersize=1)
-    plt.xlabel("simulation steps")
-    plt.ylabel("accumulated reward")
-    plt.ylim([-0.1 * final_averaged_reward, 2.1 * final_averaged_reward])
-    title = (
-        f"Averaged accumulated reward\n" f"averaged reward: {final_averaged_reward:.3f}"
-    )
-    plt.title(title)
-    figname = f"{final_averaged_reward:.3f}.pdf"
-    figpath = os.path.join("images", figname)
-    plt.savefig(figpath)
-    plt.close()
+    # plt.plot(range(TOTAL_NUMBER_OF_STEPS), averaged_rewards, "o", markersize=1)
+    # plt.xlabel("simulation steps")
+    # plt.ylabel("accumulated reward")
+    # plt.ylim([-0.1 * final_averaged_reward, 2.1 * final_averaged_reward])
+    # title = (
+    #     f"Averaged accumulated reward\n" f"averaged reward: {final_averaged_reward:.3f}"
+    # )
+    # plt.title(title)
+    # figname = f"{final_averaged_reward:.3f}.jpg"
+    # figpath = os.path.join("images", figname)
+    # plt.savefig(figpath)
+    # plt.close()
+    # plt.show()
 
 
 def clean(folder: str) -> None:

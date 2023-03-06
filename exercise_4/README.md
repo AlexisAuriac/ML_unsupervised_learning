@@ -29,3 +29,36 @@ You will need to
 Your objective is to obtain a final average reward of at least 20.
 
 Figure 1 (see pdf subject) - Convergence of the average reward obtained by the agent with the default policy.
+
+## Main sources
+
+[Simple introduction to reinforcement learning](https://www.kaggle.com/code/sangwookchn/reinforcement-learning-using-scikit-learn)
+
+[Q-learning](https://en.wikipedia.org/wiki/Q-learning)
+
+## Solution
+
+### No machine learning
+
+We implemented a solution that doesn't use any machine learning, this was useful for understanding the rules of the game.
+
+The code is in ```policy_no_ml.py```.
+
+It gets a final reward of approximately 45.
+
+### Q-learning
+
+(see policy.py)
+
+To understand the Q-learning algorithm we first applied it to a game of tic-tac-toe (see ```tic_tac_toe.py```).
+
+On the simulation it does not work very well (it averages at a reward of around 21).
+
+Here are some ideas of improvements that could be made:
+- optimize the parameters:
+	- \+ easy to do
+	- \- probably won't change the result significantly
+- normalize the rewards
+- make the reward impact previous actions
+	- \+ could improve exploration
+	- \- actually made results worse when tried on tic-tac-toe
