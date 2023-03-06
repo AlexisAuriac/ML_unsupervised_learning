@@ -8,6 +8,7 @@ import numpy as np
 from agent import Agent
 # from default_policy import default_policy
 from policy_no_ml import policy as policy_no_ml
+from policy_UCB import policy as policy_UCB
 from policy import policy
 
 WORLD_SIZE = 8

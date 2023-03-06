@@ -56,7 +56,7 @@ def policy(agent: Agent) -> str:
 	if state_hash not in Q:
 		Q[state_hash] = np.zeros(3)
 
-	if rewards_reset(agent.known_rewards) == False and policy.prev_state != None:
+	if not rewards_reset(agent.known_rewards) and policy.prev_state != None:
 		reward = normalize_reward(agent.known_rewards[agent.position])
 		Q[policy.prev_state][policy.prev_action] += ALPHA * (reward + GAMMA * np.max(Q[state_hash]) - Q[policy.prev_state][policy.prev_action])
 

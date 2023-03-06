@@ -32,19 +32,31 @@ Figure 1 (see pdf subject) - Convergence of the average reward obtained by the a
 
 ## Main sources
 
-[Simple introduction to reinforcement learning](https://www.kaggle.com/code/sangwookchn/reinforcement-learning-using-scikit-learn)
+[Simple introduction to reinforcement learning (UCB, Thomson Sampling)](https://www.kaggle.com/code/sangwookchn/reinforcement-learning-using-scikit-learn)
 
 [Q-learning](https://en.wikipedia.org/wiki/Q-learning)
 
 ## Solution
 
+**The main solution is Q-learning the rest is mostly there to document our process**
+
 ### No machine learning
 
 We implemented a solution that doesn't use any machine learning, this was useful for understanding the rules of the game.
 
+It chooses to stay if the current position has a reward superior to a certain threshold.
+
 The code is in ```policy_no_ml.py```.
 
-It gets a final reward of approximately 45.
+It gets a final reward of approximately 45 (with a treshold of 40).
+
+### UCB
+
+(see policy_UCB.py)
+
+This policy is based on the no ML one, it uses UCB to select the optimal threshold.
+
+Its results are basically the same as the version with a fixed threshold of 40.
 
 ### Q-learning
 
