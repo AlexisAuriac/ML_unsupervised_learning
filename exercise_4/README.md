@@ -67,7 +67,7 @@ Its results are basically the same as the version with a fixed threshold of 40.
 
 ### Q-learning
 
-(see policy.py)
+(see alexis-david_policy.py)
 
 To understand the Q-learning algorithm we first applied it to a game of tic-tac-toe (see ```tic_tac_toe.py```).
 

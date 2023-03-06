@@ -36,9 +36,6 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 4:
-- rename ```policy.py``` file according to the subject
-
 Part 5
 
 Write report
