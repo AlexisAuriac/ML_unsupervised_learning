@@ -38,7 +38,8 @@ Figure 1 (see pdf subject) - Convergence of the average reward obtained by the a
 
 ## Solution
 
-**The main solution is Q-learning the rest is mostly there to document our process**
+<!-- https://stackoverflow.com/a/45508928/12864941 -->
+**The main solution is [Q-learning](#q-learning) the rest is mostly there to document our process**
 
 ### No machine learning
 
@@ -48,7 +49,9 @@ It chooses to stay if the current position has a reward superior to a certain th
 
 The code is in ```policy_no_ml.py```.
 
-It gets a final reward of approximately 45 (with a treshold of 40).
+It gets an average accumulated reward of approximately 45 (with a threshold of 40).
+
+![Policy no ML average accumulated reward](images/policy_no_ml.jpg?raw=true)
 
 ### UCB
 
@@ -56,7 +59,11 @@ It gets a final reward of approximately 45 (with a treshold of 40).
 
 This policy is based on the no ML one, it uses UCB to select the optimal threshold.
 
+The best performing threshold varies but it is often 40.
+
 Its results are basically the same as the version with a fixed threshold of 40.
+
+![Policy UCB average accumulated reward](images/policy_UCB.jpg?raw=true)
 
 ### Q-learning
 
@@ -64,7 +71,7 @@ Its results are basically the same as the version with a fixed threshold of 40.
 
 To understand the Q-learning algorithm we first applied it to a game of tic-tac-toe (see ```tic_tac_toe.py```).
 
-On the simulation it does not work very well (it averages at a reward of around 21).
+On the simulation it does not work very well (average accumulated reward of around 21).
 
 The algorithm learns the value of an action in a particular state, which posed a problem since each of the 8 position could have a value of 0 to 100 (it's a bit more complicated than that in reality, see ```reset_reward()``` in simulation.py), this means that there are 100^8 possible states (again, this is simplified). This is too many possible states, we would never encounter the same state twice, defeating the point of Q-learning.
 
@@ -75,14 +82,18 @@ To solve this issue we divide the reward into "reward levels", for number_of_lev
 
 This allows us to drastically reduce the number of states.
 
-At this point we had an average total reward of around 21.
+At this point we had an average accumulated reward of around 21.
+
+![Policy Q-learning average accumulated reward](images/policy_Q-learning.jpg?raw=true)
 
 We then normalized the rewards to have a mean of 0 and a standard deviation of 1.
 
 This improved our average total rewards to 25.
 
-Here are some ideas of improvements that could be made:
-- optimize the parameters:
+![Policy Q-learning with normalized rewards average accumulated reward](images/policy_Q-learning_normalized_rewards.jpg?raw=true)
+
+Here are some other ideas of improvements that could be made:
+- optimize the parameters (especially epsilon and the number of reward levels):
 	- \+ easy to do
 	- \- probably won't change the result significantly
 - make the reward impact previous actions
