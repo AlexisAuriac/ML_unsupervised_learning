@@ -1,10 +1,15 @@
+import math
 import random
 
 import numpy as np
 
 from agent import Agent
 
-K = 4
+MAX_REWARD = 100
+MEAN_REWARD = (MAX_REWARD - 1) / 2
+STD_REWARD = math.sqrt((MAX_REWARD**2 - 1) / 12) # https://testbook.com/question-answer/the-standard-deviation-of-the-first-n-natu--5ee75da08004d10d128bc6d3
+
+K = 5
 K_FACTOR = 100 // K
 
 LEFT = 0
@@ -16,8 +21,14 @@ ALPHA = 0.1
 GAMMA = 0.9
 EPSILON = 0.1
 
+
+def normalize_reward(reward):
+	return (reward - MEAN_REWARD) / STD_REWARD
+
+
 def rewards_reset(rewards):
 	return all(rewards == 0)
+
 
 def get_valid_actions(agent):
 	if agent.position == 0:
@@ -27,8 +38,10 @@ def get_valid_actions(agent):
 	else:
 		return [LEFT, RIGHT, NONE]
 
+
 def select_action(action_values, valid_actions):
 	return max(filter(lambda x: x[0][0] in valid_actions, np.ndenumerate(action_values)), key=lambda x: x[1])[0][0]
+
 
 def policy(agent: Agent) -> str:
 	Q = policy.Q
@@ -44,7 +57,7 @@ def policy(agent: Agent) -> str:
 		Q[state_hash] = np.zeros(3)
 
 	if rewards_reset(agent.known_rewards) == False and policy.prev_state != None:
-		reward = agent.known_rewards[agent.position]
+		reward = normalize_reward(agent.known_rewards[agent.position])
 		Q[policy.prev_state][policy.prev_action] += ALPHA * (reward + GAMMA * np.max(Q[state_hash]) - Q[policy.prev_state][policy.prev_action])
 
 	policy.prev_state = state_hash
@@ -57,4 +70,3 @@ def policy(agent: Agent) -> str:
 policy.prev_state = None
 policy.prev_action = None
 policy.Q = {}
-policy.i = 0

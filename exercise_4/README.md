@@ -54,11 +54,25 @@ To understand the Q-learning algorithm we first applied it to a game of tic-tac-
 
 On the simulation it does not work very well (it averages at a reward of around 21).
 
+The algorithm learns the value of an action in a particular state, which posed a problem since each of the 8 position could have a value of 0 to 100 (it's a bit more complicated than that in reality, see ```reset_reward()``` in simulation.py), this means that there are 100^8 possible states (again, this is simplified). This is too many possible states, we would never encounter the same state twice, defeating the point of Q-learning.
+
+To solve this issue we divide the reward into "reward levels", for number_of_levels=4 we have:
+- 0-24 = 0
+- 25-49 = 1
+- ...
+
+This allows us to drastically reduce the number of states.
+
+At this point we had an average total reward of around 21.
+
+We then normalized the rewards to have a mean of 0 and a standard deviation of 1.
+
+This improved our average total rewards to 25.
+
 Here are some ideas of improvements that could be made:
 - optimize the parameters:
 	- \+ easy to do
 	- \- probably won't change the result significantly
-- normalize the rewards
 - make the reward impact previous actions
 	- \+ could improve exploration
 	- \- actually made results worse when tried on tic-tac-toe
