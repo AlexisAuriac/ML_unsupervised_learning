@@ -1,5 +1,10 @@
+"""
+Policy that uses Q-learning to choose what action to do.
+"""
+
 import math
 import random
+from typing import List
 
 import numpy as np
 
@@ -22,15 +27,15 @@ GAMMA = 0.9
 EPSILON = 0.1
 
 
-def normalize_reward(reward):
+def normalize_reward(reward: int):
 	return (reward - MEAN_REWARD) / STD_REWARD
 
 
-def rewards_reset(rewards):
+def rewards_reset(rewards: List[int]):
 	return all(rewards == 0)
 
 
-def get_valid_actions(agent):
+def get_valid_actions(agent: Agent):
 	if agent.position == 0:
 		return [RIGHT, NONE]
 	elif agent.position == len(agent.known_rewards) - 1:
@@ -39,7 +44,7 @@ def get_valid_actions(agent):
 		return [LEFT, RIGHT, NONE]
 
 
-def select_action(action_values, valid_actions):
+def select_action(action_values: List[float], valid_actions: List[int]):
 	return max(filter(lambda x: x[0][0] in valid_actions, np.ndenumerate(action_values)), key=lambda x: x[1])[0][0]
 
 

@@ -37,7 +37,6 @@ pip3 freeze > requirements.txt
 ## Todo
 
 Part 4:
-- improve code style (docstrings, type hints, ...)
 - rename ```policy.py``` file according to the subject
 
 Part 5

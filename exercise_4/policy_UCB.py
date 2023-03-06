@@ -1,6 +1,11 @@
+"""
+Policy based policy_no_ml.py that uses Upper Confidence Bound (UCB) to select a threshold as the data comes in.
+"""
+
 import atexit
 import math
 import random
+from typing import List
 
 import numpy as np
 
@@ -14,12 +19,20 @@ thresholds = list(range(20, 100, 10))
 nb_treshold = len(thresholds)
 
 
-def normalize_reward(reward):
+def normalize_reward(reward: int):
 	return (reward - MEAN_REWARD) / STD_REWARD
 
 
-def rewards_reset(rewards):
+def rewards_reset(rewards: List[int]):
 	return all(rewards == 0)
+
+
+# https://stackoverflow.com/a/3850271/12864941
+def print_info():
+	average_rewards = np.array(policy.reward_sum) / policy.nb_selections
+	print(f'average rewards: {average_rewards}')
+	best_thres_i = np.argmax(average_rewards)
+	print(f'best threshold: {thresholds[best_thres_i]}, avg_reward={average_rewards[best_thres_i]:.2f}, selected {policy.nb_selections[best_thres_i]} times')
 
 
 def policy(agent: Agent) -> str:
@@ -30,6 +43,9 @@ def policy(agent: Agent) -> str:
 	total_reward = policy.total_reward
 	n = policy.n
 	prev_thres_i = policy.prev_thres_i
+
+	if n == 0:
+		atexit.register(print_info) # Only register if this policy is actlually called
 
 	## Apply reward
 	if n > 0:
@@ -87,13 +103,3 @@ policy.reward_sum = [0] * nb_treshold
 policy.total_reward = 0
 policy.n = 0
 policy.prev_thres_i = 0
-
-
-# https://stackoverflow.com/a/3850271/12864941
-def exit_handler():
-	average_rewards = np.array(policy.reward_sum) / policy.nb_selections
-	print(f'average rewards: {average_rewards}')
-	best_thres_i = np.argmax(average_rewards)
-	print(f'best threshold: {thresholds[best_thres_i]}, avg_reward={average_rewards[best_thres_i]:.2f}, selected {policy.nb_selections[best_thres_i]} times')
-
-atexit.register(exit_handler)

@@ -1,14 +1,17 @@
 #!/bin/env python3
 
+from typing import List
+
 import numpy as np
 
 """
-Example Reinforcment learning problem.
+Example of a Reinforcment learning problem.
 """
 
 Q = {}
 
-def compute_reward(state):
+
+def compute_reward(state: List[str]):
 	winner = check_winner(state)
 	if winner == 'X':
 		return 1
@@ -17,7 +20,8 @@ def compute_reward(state):
 	else:
 		return 0
 
-def q_learning(state, action_stack, alpha=0.1, gamma=0.9, epsilon=0.02):
+
+def q_learning(state: List[str], action_stack: List[int], alpha: float = 0.1, gamma: float = 0.9, epsilon: float = 0.02):
 	state_hash = str(state)
 	valid_actions = get_valid_actions(state)
 
@@ -50,17 +54,8 @@ def q_learning(state, action_stack, alpha=0.1, gamma=0.9, epsilon=0.02):
 
 	return next_state, reward, action_stack
 
-def state_to_index(state):
-	index = 0
-	for i, val in enumerate(state):
-		if val == 'X':
-			index += 3**(2*i)
-		elif val == 'O':
-			index += 2 * 3**(2*i)
 
-	return index
-
-def take_action(state, action, player='X'):
+def take_action(state: List[str], action: int, player: str = 'X'):
 	if state[action] != ' ':
 		raise 'invalid action'
 
@@ -69,10 +64,12 @@ def take_action(state, action, player='X'):
 	reward = compute_reward(next_state)
 	return tuple(next_state), reward
 
-def get_valid_actions(state):
+
+def get_valid_actions(state: List[str]):
 	return [i for i, val in enumerate(state) if val == ' ']
 
-def check_winner(state):
+
+def check_winner(state: List[str]):
 	# Check rows
 	for i in range(0, 9, 3):
 		if state[i] == state[i+1] == state[i+2] and state[i] != ' ':
@@ -91,7 +88,8 @@ def check_winner(state):
 	# No winner
 	return None
 
-def get_opponent_action(state):
+
+def get_opponent_action(state: List[str]):
 	# for i in range(9):
 	#     if state[i] == ' ':
 	#         next_state, _ = take_action(state, i, player='O')
@@ -101,8 +99,9 @@ def get_opponent_action(state):
 	valid_moves = [i for i in range(9) if state[i] == ' ']
 	return np.random.choice(valid_moves)
 
+
 def play_game():
-	state = (' ',) * 9
+	state = [' '] * 9
 	action_stack = []
 
 	while True:
