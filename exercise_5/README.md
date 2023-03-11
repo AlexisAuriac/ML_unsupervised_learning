@@ -19,7 +19,7 @@ You could start with a general analysis of the dataset, with for instance a file
 - histograms of quantitative variables with a comment on important statistical aspects, such as means, standard deviations, etc...
 - A study of potential outliers
 - Correlation matrices (maybe not for all variables)
-- Any interesting analysis : if you have categorical data, with categories are represented most ? To what extent ?
+- Any interesting analysis: if you have categorical data, which categories are represented most ? To what extent ?
 
 If the dataset is very large you may also extract a random sample of the dataset to build histogram or compute correlations. You can discuss whether the randomness of the sample has an important influence on the analysis result (this will depend on the dataset)
 
@@ -38,3 +38,15 @@ In our report, you could include for instance:
 - a short discussion of the results
 
 Feel free to add useful visualizations for each step of your processing.
+
+## Main sources
+
+[Fun, beginner-friendly datasets](https://www.kaggle.com/code/rtatman/fun-beginner-friendly-datasets)
+
+[Is Metal Music Dying?](https://www.kaggle.com/code/guyabihanna/is-metal-music-dying)
+
+## Solution
+
+dataset about metal bands by nation from 1960 to 2017 ([source](https://www.kaggle.com/datasets/mrpantherson/metal-by-nation?resource=download)).
+
+(sidenote: had to change the encoding, see ```convert_dataset.py```)

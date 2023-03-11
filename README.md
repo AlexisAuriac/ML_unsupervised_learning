@@ -5,8 +5,8 @@ M-MLR-901
 PAR-9-2
 
 Group members:
-- Alexis Auriac
-- David Tedesco
+- Alexis Auriac - part 3, 4, and 5
+- David Tedesco - part 1 and 2
 
 Delivery: March 19th
 
@@ -36,6 +36,8 @@ pip3 freeze > requirements.txt
 
 ## Todo
 
-Part 5
+Part 5:
+- finish analysis
+- solve problem using unsupervised learning
 
 Write report
