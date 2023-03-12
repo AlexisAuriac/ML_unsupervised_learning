@@ -26,4 +26,13 @@ plt.title('Top 10 nations by number of bands')
 # plt.show()
 plt.savefig(os.path.join('images', 'top10_nation_by_number_of_bands.jpg'))
 
-# todo: origin: add distribution of values
+plt.figure(figsize=(8, 6))
+plt.bar(nb_bands_by_nation.index, nb_bands_by_nation.values)
+plt.xticks([])
+plt.tick_params(axis='x', bottom=False)
+plt.ylabel('Number of bands')
+plt.title('Distribution of metal bands by country')
+# plt.show()
+plt.savefig(os.path.join('images', 'ditribution_number_bands.jpg'))
+
+# todo: explain distribution; analyze average, std, etc...
