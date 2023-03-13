@@ -50,3 +50,27 @@ Feel free to add useful visualizations for each step of your processing.
 dataset about metal bands by nation from 1960 to 2017 ([source](https://www.kaggle.com/datasets/mrpantherson/metal-by-nation?resource=download)).
 
 (sidenote: had to change the encoding, see ```convert_dataset.py```)
+
+### Analysis
+
+The dataset has 6 features:
+- origin: country of origin of the band
+- band_name
+- fans: number of fans of the band
+- formed: year the band formed
+- split: year the band split, if applicable
+- style: style(s) of the band
+
+#### Origin
+
+![Top 10 nations by number of bands](images/top10_nation_by_number_of_bands_by_nation.jpg?raw=true)
+
+![Distribution of metal bands by country](images/distribution_number_bands_by_nation.jpg?raw=true)
+
+![Box plot of the number of bands by nation](images/box_plot_number_bands_by_nation.jpg?raw=true)
+
+*Points are outliers for this box plot*
+
+The distribution of bands is very unequal with the large majority of nations having only 1 bands (43 out of 113), because of this most of the nations are considered outliers.
+
+This would make this feature hard to exploit so we are going to avoid it.
