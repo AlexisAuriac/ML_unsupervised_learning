@@ -37,6 +37,7 @@ pip3 freeze > requirements.txt
 ## Todo
 
 Part 5:
+- remove duplicates in dataset
 - finish analysis
 - solve problem using unsupervised learning
 

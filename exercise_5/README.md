@@ -74,3 +74,17 @@ The dataset has 6 features:
 The distribution of bands is very unequal with the large majority of nations having only 1 bands (43 out of 113), because of this most of the nations are considered outliers.
 
 This would make this feature hard to exploit so we are going to avoid it.
+
+#### Fans
+
+![Top 10 nations by number of bands](images/top10_nation_by_number_of_bands_by_nation.jpg?raw=true)
+
+![Number of fans by band](images/fans_hist.jpg?raw=true)
+
+![Number of fans by band (log scale)](images/fans_hist_log.jpg?raw=true)
+
+The distribution is of fans is very unequal
+
+The distribution of fans is very unequal with the large majority of bands having less than 10 fans (2265 out of 5000), because of this a lot of the more interesting bands are outliers.
+
+This would make this feature hard to exploit so we are going to avoid it.

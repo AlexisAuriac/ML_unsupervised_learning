@@ -42,3 +42,39 @@ plt.ylabel('Number of bands')
 plt.title('Box plot of the number of bands by nation')
 # plt.show()
 plt.savefig(os.path.join('images', 'box_plot_number_bands_by_nation.jpg'))
+
+## Fans
+nb_fans = metal_bands['fans'].sort_values(ascending=False)
+
+fig = plt.figure()
+fig.set_size_inches(8, 6)
+fig.subplots_adjust(bottom=0.25)
+# https://stackoverflow.com/a/52272617/12864941
+ax = fig.add_subplot(111)
+
+ax.bar(nb_fans.index[:10], nb_fans.values[:10])
+ax.tick_params(axis='x', rotation=75)
+ax.set_xlabel('Band')
+ax.set_ylabel('Number of fans')
+plt.title('Top 10 bands by number of fans')
+# plt.show()
+plt.savefig(os.path.join('images', 'top10_bands_by_number_of_fans.jpg'))
+
+plt.clf()
+plt.hist(metal_bands['fans'], bins=40)
+plt.xlabel('Number of fans')
+plt.ylabel('Number of bands')
+plt.title('Number of fans by band')
+# plt.show()
+plt.savefig(os.path.join('images', 'fans_hist.jpg'))
+
+plt.clf()
+plt.hist(metal_bands['fans'], bins=40)
+plt.gca().set_yscale('log')
+plt.xlabel('Number of fans (log scale)')
+plt.ylabel('Number of bands')
+plt.title('Number of fans by band (log scale)')
+# plt.show()
+plt.savefig(os.path.join('images', 'fans_hist_log.jpg'))
+
+print(f'{len(nb_fans[nb_fans < 10])} out of {len(nb_fans)} has less than 10 fans')
