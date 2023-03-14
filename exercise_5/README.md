@@ -77,7 +77,7 @@ This would make this feature hard to exploit so we are going to avoid it.
 
 #### Fans
 
-![Top 10 nations by number of bands](images/top10_nation_by_number_of_bands_by_nation.jpg?raw=true)
+![Top 10 bands by number of fans](images/top10_bands_by_number_of_fans.jpg?raw=true)
 
 ![Number of fans by band](images/fans_hist.jpg?raw=true)
 
