@@ -77,4 +77,4 @@ plt.title('Number of fans by band (log scale)')
 # plt.show()
 plt.savefig(os.path.join('images', 'fans_hist_log.jpg'))
 
-print(f'{len(nb_fans[nb_fans < 10])} out of {len(nb_fans)} has less than 10 fans')
+print(f'{len(nb_fans[nb_fans < 10])} out of {len(nb_fans)} have less than 10 fans')

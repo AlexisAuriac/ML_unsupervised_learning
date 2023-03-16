@@ -49,7 +49,13 @@ Feel free to add useful visualizations for each step of your processing.
 
 dataset about metal bands by nation from 1960 to 2017 ([source](https://www.kaggle.com/datasets/mrpantherson/metal-by-nation?resource=download)).
 
-(sidenote: had to change the encoding, see ```convert_dataset.py```)
+### Clean up
+
+(see convert_dataset.py)
+
+The dataset's encoding was ISO-8859-1, we changed it to utf-8.
+
+Some bands appeared twice in the dataset.
 
 ### Analysis
 
