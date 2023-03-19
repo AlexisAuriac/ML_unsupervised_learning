@@ -84,9 +84,8 @@ formed = metal_bands['formed']
 formed = formed[formed != '-'].astype(int).sort_values()
 
 print(f'{metal_bands["formed"].size - formed.size} bands don\'t have a formation date')
-
-print(f'Formation date average {formed.mean():.2f}')
-print(f'Formation date standard deviation {formed.std():.2f}')
+print(f'Formation date average: {formed.mean():.2f}')
+print(f'Formation date standard deviation: {formed.std():.2f}')
 
 plt.clf()
 plt.hist(formed, bins=(formed[-1] - formed[0]))
@@ -95,3 +94,40 @@ plt.xlabel('Year')
 plt.ylabel('Number of bands')
 plt.title('Formation date histogram')
 plt.savefig(os.path.join('images', 'formed_hist.jpg'))
+
+## Split
+split = metal_bands['split']
+split = split[split != '-'].astype(int).sort_values()
+nb_not_split = metal_bands["split"].size - split.size
+
+print(f'{nb_not_split} out of {metal_bands["split"].size} bands don\'t have a split date')
+print(f'Split date average: {split.mean():.2f}')
+print(f'Split date standard deviation: {split.std():.2f}')
+
+plt.clf()
+plt.hist(split, bins=(split[-1] - split[0]))
+# plt.show()
+plt.xlabel('Year')
+plt.ylabel('Number of bands')
+plt.title('Split date histogram')
+plt.savefig(os.path.join('images', 'split_hist.jpg'))
+
+# https://stackoverflow.com/a/21415990/12864941
+split_bands = (metal_bands['formed'] != '-') & (metal_bands['split'] != '-')
+split_bands = metal_bands.loc[split_bands]
+formed = split_bands['formed'].astype(int)
+split = split_bands['split'].astype(int)
+active_period = (split - formed).sort_values()
+
+print(f'{len(active_period[active_period == 0])} out of {len(split_bands)} bands split the same year they were formed')
+print(f'Active period average: {active_period.mean():.2f} years')
+print(f'Active period standard deviation: {active_period.std():.2f} years')
+
+plt.clf()
+plt.hist(active_period, bins=(active_period[-1] - active_period[0]))
+# plt.show()
+plt.gca().set_yscale('log')
+plt.xlabel('Years')
+plt.ylabel('Number of bands (log scale)')
+plt.title('Band active period histogram')
+plt.savefig(os.path.join('images', 'active_period_hist.jpg'))

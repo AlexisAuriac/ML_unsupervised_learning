@@ -103,4 +103,26 @@ This would make this feature hard to exploit so we are going to avoid it.
 
 ![Formation date histogram](images/formed_hist.jpg?raw=true)
 
+4 bands don't have a formation date.
+
 The average formation date is ```2000.52``` and the its standard deviation is ```8.83```.
+
+#### Split date
+
+![Split date histogram](images/split_hist.jpg?raw=true)
+
+2189 out of 4941 bands don't have a split date.
+
+The average split date is ```2001.34``` and the its standard deviation is ```8.90```.
+
+The average and standard deviation of formation and split are suspiciously similar, this may be symptomatic of the way the data was collected.
+
+![Band active period histogram](images/active_period_hist.jpg?raw=true)
+
+2468 out of 2752 bands split the same year they were formed.
+
+Active period average: ```1.08``` years
+
+Active period standard deviation: ```3.78``` years
+
+The large majority of bands split the year they were formed, this doesn't seem right. After checking a few bands it seems that a lot of the split dates is often the same as the formed date for no good reason.
