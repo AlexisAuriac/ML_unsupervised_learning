@@ -125,4 +125,4 @@ Active period average: ```1.08``` years
 
 Active period standard deviation: ```3.78``` years
 
-The large majority of bands split the year they were formed, this doesn't seem right. After checking a few bands it seems that a lot of the split dates is often the same as the formed date for no good reason.
+The large majority of bands split the year they were formed, this doesn't seem right. After checking a few bands it seems that the split date is often the same as the formed date for no good reason.
