@@ -1,5 +1,13 @@
 #!/bin/env python3
 
+"""
+Cleans up some aspects of the dataset:
+- changes file encoding from ISO-8859-1 to utf-8
+- removes redundant columns
+- removes duplicate lines
+This should be run ONCE when downloading the dataset.
+"""
+
 import pandas as pd
 
 # https://stackoverflow.com/a/18172249/12864941

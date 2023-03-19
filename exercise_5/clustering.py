@@ -1,5 +1,10 @@
 #!/bin/env python3
 
+"""
+Clustering based on the number of fans and the year the band was formed.
+We used the Kmeans clustering with the knee method.
+"""
+
 import os
 from typing import List
 

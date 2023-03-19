@@ -40,6 +40,5 @@ Part 5:
 - analysis:
 	- make correlation matrix
 - improve and detail the problem solving part
-- clean up code
 
 Write report
