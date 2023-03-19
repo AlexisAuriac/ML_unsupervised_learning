@@ -39,6 +39,7 @@ pip3 freeze > requirements.txt
 Part 5:
 - analysis:
 	- make correlation matrix
-- solve problem using unsupervised learning
+- improve and detail the problem solving part
+- clean up code
 
 Write report

@@ -85,8 +85,6 @@ In particular when it comes to the year the bands were formed, it may be the cas
 
 The distribution of bands is very unequal with the large majority of nations having only 1 bands (43 out of 113), because of this most of the nations are considered outliers.
 
-This would make this feature hard to exploit so we are going to avoid it.
-
 #### Fans
 
 ![Top 10 bands by number of fans](images/top10_bands_by_number_of_fans.jpg?raw=true)
@@ -96,8 +94,6 @@ This would make this feature hard to exploit so we are going to avoid it.
 ![Number of fans by band (log scale)](images/fans_hist_log.jpg?raw=true)
 
 The distribution of fans is very unequal with the large majority of bands having less than 10 fans (2265 out of 5000), because of this a lot of the more interesting bands are outliers.
-
-This would make this feature hard to exploit so we are going to avoid it.
 
 #### Formation date
 
@@ -126,3 +122,15 @@ Active period average: ```1.08``` years
 Active period standard deviation: ```3.78``` years
 
 The large majority of bands split the year they were formed, this doesn't seem right. After checking a few bands it seems that the split date is often the same as the formed date for no good reason.
+
+### Clustering
+
+For the unsupervised learning part of this exercise we chose to do a clustering based on the number of fans and the year the band was formed.
+
+This part isn't as detailed as we wanted it to be because of the poor quality of the dataset and lack of time.
+
+We used the Kmeans clustering with the knee method.
+
+![Clustering of bands based on formation date and number of fans (kmeans/knee)](images/kmeans_knee_clustering.jpg?raw=true)
+
+The data is clustered in what looks like "levels of popularity" with the year it was formed having little impact on the clusters.
