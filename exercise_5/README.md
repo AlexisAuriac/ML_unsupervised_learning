@@ -89,8 +89,12 @@ This would make this feature hard to exploit so we are going to avoid it.
 
 ![Number of fans by band (log scale)](images/fans_hist_log.jpg?raw=true)
 
-The distribution is of fans is very unequal
-
 The distribution of fans is very unequal with the large majority of bands having less than 10 fans (2265 out of 5000), because of this a lot of the more interesting bands are outliers.
 
 This would make this feature hard to exploit so we are going to avoid it.
+
+#### Formation date
+
+![Formation date histogram](images/formed_hist.jpg?raw=true)
+
+The average formation date is ```2000.52``` and the its standard deviation is ```8.83```.

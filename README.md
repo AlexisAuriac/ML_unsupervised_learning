@@ -37,7 +37,10 @@ pip3 freeze > requirements.txt
 ## Todo
 
 Part 5:
-- finish analysis
+- analysis:
+	- add general information about the dataset
+	- histogram for the ```split``` feature
+	- make correlation matrix
 - solve problem using unsupervised learning
 
 Write report

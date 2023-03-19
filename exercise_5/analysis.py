@@ -78,3 +78,20 @@ plt.title('Number of fans by band')
 plt.savefig(os.path.join('images', 'fans_hist_log.jpg'))
 
 print(f'{len(nb_fans[nb_fans < 10])} out of {len(nb_fans)} have less than 10 fans')
+
+## Formed
+formed = metal_bands['formed']
+formed = formed[formed != '-'].astype(int).sort_values()
+
+print(f'{metal_bands["formed"].size - formed.size} bands don\'t have a formation date')
+
+print(f'Formation date average {formed.mean():.2f}')
+print(f'Formation date standard deviation {formed.std():.2f}')
+
+plt.clf()
+plt.hist(formed, bins=(formed[-1] - formed[0]))
+# plt.show()
+plt.xlabel('Year')
+plt.ylabel('Number of bands')
+plt.title('Formation date histogram')
+plt.savefig(os.path.join('images', 'formed_hist.jpg'))
