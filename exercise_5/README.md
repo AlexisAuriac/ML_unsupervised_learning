@@ -47,7 +47,9 @@ Feel free to add useful visualizations for each step of your processing.
 
 ## Solution
 
-dataset about metal bands by nation from 1960 to 2017 ([source](https://www.kaggle.com/datasets/mrpantherson/metal-by-nation?resource=download)).
+We chose a dataset about metal bands by nation from 1960 to 2017 ([source](https://www.kaggle.com/datasets/mrpantherson/metal-by-nation)).
+
+The data was scraped from the website [metalstorm](http://metalstorm.net/)
 
 ### Clean up
 
@@ -66,6 +68,10 @@ The dataset has 6 features:
 - formed: year the band formed
 - split: year the band split, if applicable
 - style: style(s) of the band
+
+The dataset was collected from the [metalstorm](http://metalstorm.net/) website, its data may be heavily skewed towards certain bands, genres, etc...
+
+In particular when it comes to the year the bands were formed, it may be the case that older bands are underrepresented. Considering that the older bands go back to the 60s, those bands are probably past their prime, their fans use the internet less than that of newer bands, or they might just be dead. On the other hand the older bands that are represented are those that are remembered, the most popular ones.
 
 #### Origin
 

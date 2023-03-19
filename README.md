@@ -38,7 +38,6 @@ pip3 freeze > requirements.txt
 
 Part 5:
 - analysis:
-	- add general information about the dataset
 	- histogram for the ```split``` feature
 	- make correlation matrix
 - solve problem using unsupervised learning
